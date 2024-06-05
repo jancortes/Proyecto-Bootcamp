@@ -1,6 +1,6 @@
 # Proyecto-Bootcamp
 Proyecto final despliegue infraestructura altamente disponible
-Planificacion
+# Planificacion
 # Requerimientos
 # Requerimiento 1
 # Requerimiento 2
