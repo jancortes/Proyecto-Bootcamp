@@ -4,7 +4,7 @@ Proyecto final despliegue infraestructura altamente disponible
 # Requerimientos
 # Arquitectura
 Este es el diagrama de arquitectura para una infraestructura altamente disponible en una libreria.
-![arquitectura nube](/images/arquitectura nube.png)
+![arquitectura nube](images/arquitecturanube.PNG)
 ## Requerimiento 1
 ## Requerimiento 2
 ## Requerimiento 3
