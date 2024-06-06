@@ -26,4 +26,6 @@ Este es el diagrama de arquitectura para una infraestructura altamente disponibl
 # garantizando acceso seguro y eficiente a los datos almacenados.
 ## Requerimiento 6
 # Para garantizar Alta disponibilidad se configuran dos zonas de Disponibilidad (A y B).
+## Requerimiento 7
+# Se debe garantizar consultas al modulo de calificaciones y contactenos dentro de la pagina del cliente.
 
