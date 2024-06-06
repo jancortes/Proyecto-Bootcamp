@@ -33,7 +33,7 @@ Proyecto final despliegue infraestructura altamente disponible
 # Se ejecutan pruebas de escalabilidad, y HA para comprobar alta disponibilidad. 
 # Legislaciones de Derechos de Autor (recomendacion al usuario solicitante para evitar incurrir en posibles amonestaciones de ley).
 ## 1.4* Arquitectura
-Este es el diagrama de arquitectura para una infraestructura altamente disponible en una libreria.
+### Este es el diagrama de arquitectura para una infraestructura altamente disponible en una libreria.
 ![arquitectura nube](images/arquitecturanube.PNG)
 # Ejecucion
 ## Se utilizó el servicio de cloudoformation que es un servicio de infraestructura como código para realizar el despliegue de la arquitectura. Utilizamos el siguiente comando para realizar el despliegue de la arquitectura:
@@ -46,12 +46,15 @@ Este es el diagrama de arquitectura para una infraestructura altamente disponibl
 ### PublicSubnetA: 172.16.1.0/24 - Availability Zone A
 ### PublicSubnetB: 172.16.2.0/24 - Availability Zone B
 ### PrivateSubnetA: 172.16.3.0/24-Availability Zone A
+### PrivateSubnetB: 172.16.4.0/24 - Availability Zone B
+### PrivateSubnetAA: 172.16.5.0/24-Availability Zone A
+### PrivateSubnetBB: 172.16.6.0/24 - Availability Zone B
 ## Crear Route Table
-Asociar con las dos subredes públicas
+### Asociar con las dos subredes públicas
 ## Crear ruta para salida a internet
 ## Crear dos NatGateway
-Uno se crea en la PublicSubnetA
-El otro se crea en la PublicSubnetB
+### Uno se crea en la PublicSubnetA
+### El otro se crea en la PublicSubnetB
 ## Asociar cada NatGateway con una PrivateSubnet
 ## Crear las rutas para salida a internet.
 ## Crear grupos de seguridad:
@@ -60,15 +63,37 @@ El otro se crea en la PublicSubnetB
 ### Grupo para la base de datos
 ### Grupo de seguridad para el balanceador de cargas
 ## Crear Rol IAM con los siguientes permisos:
-### S3FullAccess
-### SSMFullAccess
+###  (Administrador de Nube y Servidores)
+### S3FullAccess (Administrador Soporte de Almacenamiento)
+### SSMFullAccess ()
 #### Asociar Rol a instancia EC2
-### PrivateSubnetB: 172.16.4.0/24 - Availability Zone B
-### PrivateSubnetAA: 172.16.5.0/24-Availability Zone A
-### PrivateSubnetBB: 172.16.6.0/24 - Availability Zone B
 ## Crear Internet Gateway
-Conectar con la VPC creada.
-Asociar dos subredes públicas.
+## Conectar con la VPC creada.
+## Asociar dos subredes públicas.
+## Crear los parametros de conexión a la base de datos en System Manager-Parameter Store
+## Crear instancia en una subred pública con el siguiente User Data:
+#!/bin/bash
+sudo dnf install -y python3.9-pip
+pip install virtualenv
+sudo dnf install -y mariadb105-server
+sudo service mariadb start
+sudo chkconfig mariadb on
+pip install flask
+pip install mysql-connector-python
+
+High Available and High Scaling 2
+
+pip install boto3
+wget https://jav-bucket-web.s3.amazonaws.com/python-db-ssm.zip
+wget https://jav-bucket-web.s3.amazonaws.com/databases.zip
+sudo unzip python-db-ssm.zip
+sudo unzip databases.zip
+sudo mv python-db-ssm databases /home/ec2-user
+
+## Recarga el demonio para que reconozca los cambios realizados:
+### sudo systemctl daemon-reload
+
+
 
 # Seguimiento y Control
 ## Recomendaciones en la entrega del proyecto
