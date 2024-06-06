@@ -47,4 +47,9 @@ Proyecto final despliegue infraestructura altamente disponible
 ## Arquitectura
 Este es el diagrama de arquitectura para una infraestructura altamente disponible en una libreria.
 ![arquitectura nube](images/arquitecturanube.PNG)
-
+# Ejecucion
+# Seguimiento y Control
+## Recomendaciones en la entrega del proyecto
+# Todos los requerimientos mencionados en el documento, son entregados a conformidad del solicitante. Cualquier tipo 
+# de Cambio fuera de los requerimientos establecidos seran evaluados y presupuestados en un proyecto nuevo. El
+# Soporte tendrá como alcance unicamente los recursos desplegados durante el desarrollo del proyecto y no seran incluidos nuevos requerimientos.
