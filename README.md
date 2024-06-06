@@ -37,9 +37,38 @@ Este es el diagrama de arquitectura para una infraestructura altamente disponibl
 ![arquitectura nube](images/arquitecturanube.PNG)
 # Ejecucion
 ## Se utilizó el servicio de cloudoformation que es un servicio de infraestructura como código para realizar el despliegue de la arquitectura. Utilizamos el siguiente comando para realizar el despliegue de la arquitectura:
-## Realizar la validacion de los template
+## Realizar la validacion de los template network.yml
 ### aws cloudformation validate-template --template-body file://network.yml
 ### aws cloudformation create-stack --stack-name network-stack --template-body file://network.yml
+## Crear VPC
+### CIDR: 172.16.0.0/16
+## Crear 6 subredes en dos zonas de disponibilidad diferentes:
+### PublicSubnetA: 172.16.1.0/24 - Availability Zone A
+### PublicSubnetB: 172.16.2.0/24 - Availability Zone B
+### PrivateSubnetA: 172.16.3.0/24-Availability Zone A
+## Crear Route Table
+Asociar con las dos subredes públicas
+## Crear ruta para salida a internet
+## Crear dos NatGateway
+Uno se crea en la PublicSubnetA
+El otro se crea en la PublicSubnetB
+## Asociar cada NatGateway con una PrivateSubnet
+## Crear las rutas para salida a internet.
+## Crear grupos de seguridad:
+### Grupo para la instancia en la subred publica
+### Grupo para la instancia en la subred privada
+### Grupo para la base de datos
+### Grupo de seguridad para el balanceador de cargas
+## Crear Rol IAM con los siguientes permisos:
+### S3FullAccess
+### SSMFullAccess
+#### Asociar Rol a instancia EC2
+### PrivateSubnetB: 172.16.4.0/24 - Availability Zone B
+### PrivateSubnetAA: 172.16.5.0/24-Availability Zone A
+### PrivateSubnetBB: 172.16.6.0/24 - Availability Zone B
+## Crear Internet Gateway
+Conectar con la VPC creada.
+Asociar dos subredes públicas.
 
 # Seguimiento y Control
 ## Recomendaciones en la entrega del proyecto
