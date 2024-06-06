@@ -42,6 +42,8 @@ Proyecto final despliegue infraestructura altamente disponible
 # Se aplican pruebas de stress y de carga. Adicionalmente se asigna al usuario solicitante un acceso para ingresar
 # y validar la funcionalidad de la pagina.
 # Se ejecutan pruebas de escalabilidad, y HA para comprobar alta disponibilidad. 
+# Legislaciones de Derechos de Autor (recomendacion al usuario solicitante para evitar incurrir en posibles
+# amonestaciones de ley).
 ## Arquitectura
 Este es el diagrama de arquitectura para una infraestructura altamente disponible en una libreria.
 ![arquitectura nube](images/arquitecturanube.PNG)
