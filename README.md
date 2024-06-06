@@ -24,7 +24,7 @@ Proyecto final despliegue infraestructura altamente disponible
 # La subred pública actuará como la puerta de entrada a la plataforma en línea,
 # brindando a los usuarios acceso a internet y una experiencia de navegación
 # fluida a traves del balanceador de carga. Se usara un auto scaling para redirigir volumen de 
-# trafico creando nuevas instancias que permitan alojar ese trafico.
+# tráfico creando nuevas instancias que permitan mantener equilibrado ese tráfico.
 ## Requerimiento 4
 # Las subredes privadas  estarán protegidas contra accesos no autorizados
 # desde internet garantizando la seguridad de los datos sensibles de la librería.
@@ -35,6 +35,13 @@ Proyecto final despliegue infraestructura altamente disponible
 # garantizando acceso seguro y eficiente a los datos almacenados.
 ## Requerimiento 7
 # Se debe garantizar consultas al modulo de calificaciones y contactenos dentro de la pagina del cliente.
+# Requerimientos No funcionales
+## Requerimiento 8
+# El Framework usado para la pagina web esta flask y el motor de la Base de Datos se encuentra en MariaBD
+# El despliegue por codigo ha sido diseñado en Python
+# Se aplican pruebas de stress y de carga. Adicionalmente se asigna al usuario solicitante un acceso para ingresar
+# y validar la funcionalidad de la pagina.
+# Se ejecutan pruebas de escalabilidad, y HA para comprobar alta disponibilidad. 
 ## Arquitectura
 Este es el diagrama de arquitectura para una infraestructura altamente disponible en una libreria.
 ![arquitectura nube](images/arquitecturanube.PNG)
