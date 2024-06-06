@@ -1,6 +1,6 @@
 # Proyecto-Bootcamp
 Proyecto final despliegue infraestructura altamente disponible
-__Planificación
+_ _Planificación
 # Identificar Roles
 ## Administrador de nube y servidores: derechos de administración (acceso a
 ## todo AWS).
