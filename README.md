@@ -21,6 +21,9 @@ Este es el diagrama de arquitectura para una infraestructura altamente disponibl
 # desde internet garantizando la seguridad de los datos sensibles de la librería.
 ## Requerimiento 5
 # La instancia EC2 debe poder conectarse a la base de datos en la subred
-# privada. Para facilitar esta conexión se implementarán parámetros de
-# conexión de la base de datos en el AWS System Manager Parameter Store,
+# privada. Para facilitar la conexión se implementarán parámetros de
+# configuracion de la base de datos RDS en el AWS System Manager Parameter Store,
 # garantizando acceso seguro y eficiente a los datos almacenados.
+## Requerimiento 6
+# Para garantizar Alta disponibilidad se configuran dos zonas de Disponibilidad (A y B).
+
