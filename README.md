@@ -36,6 +36,11 @@ Proyecto final despliegue infraestructura altamente disponible
 Este es el diagrama de arquitectura para una infraestructura altamente disponible en una libreria.
 ![arquitectura nube](images/arquitecturanube.PNG)
 # Ejecucion
+## Se utilizó el servicio de cloudoformation que es un servicio de infraestructura como código para realizar el despliegue de la arquitectura. Utilizamos el siguiente comando para realizar el despliegue de la arquitectura:
+## Realizar la validacion de los template
+### aws cloudformation validate-template --template-body file://network.yml
+### aws cloudformation create-stack --stack-name network-stack --template-body file://network.yml
+
 # Seguimiento y Control
 ## Recomendaciones en la entrega del proyecto
 # Todos los requerimientos mencionados en el documento, son entregados a conformidad del solicitante. Cualquier tipo 
