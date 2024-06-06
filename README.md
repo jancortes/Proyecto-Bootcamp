@@ -12,7 +12,7 @@ Proyecto final despliegue infraestructura altamente disponible
 ## Auditor - Accesos: Accesos de solo lectura Amazon EC2, RDS, IAM.
 ## Usuario de Consulta: Accesos de solo lectura Amazon EC2, RDS.
 # Diagrama de Gantt
-![Diagrama de Gantt](/images/diagrama de Gantt.png)
+![Diagrama de Gantt](images/Diagrama de Gantt.PNG)
 # Requerimientos
 ## Requerimiento 1 
 # Desarrollar la plataforma web que permita a los clientes explorar los
