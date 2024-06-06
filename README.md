@@ -11,6 +11,7 @@ Proyecto final despliegue infraestructura altamente disponible
 ## creados en S3.
 ## Auditor - Accesos: Accesos de solo lectura Amazon EC2, RDS, IAM.
 ## Usuario de Consulta: Accesos de solo lectura Amazon EC2, RDS.
+# Diagrama de Gantt
 
 # Requerimientos
 ## Requerimiento 1 
