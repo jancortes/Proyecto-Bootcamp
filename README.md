@@ -157,7 +157,7 @@ Application.yml
 Network.yml
 ## Creamos un repositorio para desplegar la infraestructura
 $ aws codecommit create-repository --repository-name infraestructura-aws --repository-description "crear infraestructura en aws"
-![despliegue de infraestructura]()
+![despliegue de infraestructura](images/creacionrepositorio.PNG)
 
 ### Se listan los repositorios
 $ aws codecommit list-repositories
