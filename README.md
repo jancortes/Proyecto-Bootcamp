@@ -62,11 +62,10 @@ Proyecto final despliegue infraestructura altamente disponible
 ### Grupo para la instancia en la subred privada
 ### Grupo para la base de datos
 ### Grupo de seguridad para el balanceador de cargas
-## Crear Rol IAM con los siguientes permisos:
-###  (Administrador de Nube y Servidores)
-### S3FullAccess (Administrador Soporte de Almacenamiento)
-### SSMFullAccess ()
-#### Asociar Rol a instancia EC2
+## Crear Roles IAM con los siguientes permisos:
+###  S3FullAccess
+###  SSMFullAccess
+###  Asociar Rol a instancia EC2
 ## Crear Internet Gateway
 ## Conectar con la VPC creada.
 ## Asociar dos subredes públicas.
@@ -90,8 +89,100 @@ sudo unzip python-db-ssm.zip
 sudo unzip databases.zip
 sudo mv python-db-ssm databases /home/ec2-user
 
+## Ingresar a la instancia y crear el siguiente archivo en la ruta /etc/systemd/system/myapp.service
+
+sudo nano /etc/systemd/system/myapp.service
+[Unit]
+Description=My Flask Application
+[Service]
+User=ec2-user
+WorkingDirectory=/home/ec2-user/python-db-ssm
+ExecStart=/usr/bin/python3 /home/ec2-user/python-db-ssm/app.py
+Restart=always
+[Install]
+WantedBy=multi-user.target
 ## Recarga el demonio para que reconozca los cambios realizados:
 ### sudo systemctl daemon-reload
+## Inicie el servicio:
+sudo systemctl start myapp
+## Habilitar el servicio para que inicie cuando arranque la máquina
+sudo systemctl enable myapp
+## Se crea la base de datos en RDS:
+## Se hace la migración de la base de datos
+## Se crea una Image (AMI) desde la instancia EC2 creada en la subred pública.
+## Se crea un Launch Template desde la AMI creada en el paso anterior.
+## No escoger VPC. Se determina en la configuración del Auto Scaling Group
+## Asignar rol.
+## Crear key pair: PEM *el key pair es propio de cada recurso*
+## Crear Auto Scaling Group a partir del Launch Template creado en el paso anterior.
+## No seleccionar Load Balancer. Se creará después.
+## Seleccionar Subredes privadas donde se van a lanzar las instancias.
+## Crear Load Balancer:
+## Escoger Application Load Balancer
+## VPC y las subredes públicas.
+## Crear Target group:
+## Definir puerto 5000
+## Asociar Load Balancer con Auto Scaling Group.
+## Para definir el Health Check:
+### Desde la aplicación agregar lo siguiente:
+@app.route('/health')
+def health():
+return jsonify('Ok'),200
+## Crear base de datos:
+## Crear SubnetGroup y asociar a la base de datos.
+## Probar el servicio
+## Se debe reiniciar el servidor que correo el servidor web en segundo plano. Para ello se utiliza el servicio
+### System Manager:
+## Se debe crear un rol para EC2 con el siguiente permiso:
+### AmazonEC2RoleForSSM
+## Asociar Rol a las instancias
+### Desde las instancias puede revisar estado del servicio System Manager Agent usando:
+sudo yum install -y amazon-ssm-agent
+sudo systemctl status amazon-ssm-agent
+## Ir al servicio System Manager:
+## Seleccionar Fleet Manager
+## Seleccionar el ID de las instancias.
+## En Node Actions, escoger Execute run Command
+## En la barra de búsquedas seleccionar: AWS-UpdateSSMAgent
+## Seleccionar instancias y darle ejecutar.
+## En la barra de búsqueda se puede seleccionar: AWS-RunShellScript
+## Se puede escribir los comandos a ejecutar en las instancias.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
