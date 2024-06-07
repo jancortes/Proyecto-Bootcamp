@@ -172,6 +172,7 @@ python3 app.py
 
 # Seguimiento y Control
 ![CloudWatch](images/Dashboardmonitoreo.PNG)
+![Cloudwatch](images/Dashboardmonitoreo1.PNG)
 ## Recomendaciones en la entrega del proyecto
 # Todos los requerimientos mencionados en el documento, son entregados a conformidad del solicitante. Cualquier tipo 
 # de Cambio fuera de los requerimientos establecidos seran evaluados y presupuestados en un proyecto nuevo. El
