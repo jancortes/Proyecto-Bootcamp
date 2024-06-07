@@ -161,7 +161,7 @@ $ aws codecommit create-repository --repository-name infraestructura-aws --repos
 
 ### Se listan los repositorios
 $ aws codecommit list-repositories
-
+![listado de repositorios](images/listrepositories.PNG)
 ## Consultamos el repositorio
 aws codecommit get-repository --repository-name infraestructura-aws
 # Se realiza un git clone del repositorio que acabamos de crear
