@@ -147,6 +147,28 @@ sudo systemctl status amazon-ssm-agent
 ## Seleccionar instancias y darle ejecutar.
 ## En la barra de búsqueda se puede seleccionar: AWS-RunShellScript
 ## Se puede escribir los comandos a ejecutar en las instancias.
+****
+## Segmentamos el codigo por servicio o según se requiera:
+Application.yml
+Network.yml
+## Creamos un repositorio para desplegar la infraestructura
+$ aws codecommit create-repository --repository-name infraestructura-aws --repository-description "crear infraestructura en aws"
+### Se listan los repositorios
+$ aws codecommit list-repositories
+## Consultamos el repositorio
+aws codecommit get-repository --repository-name infraestructura-aws
+# Se realiza un git clone del repositorio que acabamos de crear
+git clone https://git-codecommit.us-east-1.amazonaws.com/v1/repos/infraestructura-aws
+### Creamos el pipeline
+## Extraemos los archivos network.yml y application.yml y revisamos que se encuentren cargados en el repositorio de infraestructura-aws
+## Y se ejecuta el despliegue con el comando
+python3 app.py
+## Ahora podemos observar los recursos desplegados de forma correcta en AWS Cloudformation.
+
+
+
+
+
 
 
 
