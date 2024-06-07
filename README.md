@@ -8,7 +8,8 @@
 ## - Equipo de soporte de Almacenamiento: puede ver solamente los buckets creados en S3.
 ## - Auditor - Accesos: Accesos de solo lectura Amazon EC2, RDS, IAM.
 ## - Usuario de Consulta: Accesos de solo lectura Amazon EC2, RDS.
-# *1.2 Diagrama de Gantt
+# *1.2 Diagrama de Gantt![image](https://github.com/jancortes/Proyecto-Bootcamp/assets/170776324/b7f77aba-2f44-4298-badd-af767f91a62e)
+
 ![Diagrama de Gantt](images/DiagramadeGantt.PNG)
 # 1.3* Requerimientos
 ## - Requerimiento 1 
@@ -171,6 +172,10 @@ python3 app.py
 
 
 # Seguimiento y Control
+## AWS Well-Architected 
+### Ayuda a los arquitectos de la nube a crear una infraestructura segura, de alto rendimiento, resistente y eficiente para una variedad de aplicaciones y cargas de trabajo. Este marco, creado en torno a seis pilares (excelencia operativa, seguridad, fiabilidad, ### eficiencia de rendimiento, optimización de costos y sostenibilidad), ofrece un enfoque coherente para que los clientes y los socios evalúen las arquitecturas e implementen diseños escalables.
+![AWS Well Architect]
+
 ![CloudWatch](images/Dashboardmonitoreo.PNG)
 ![Cloudwatch](images/Dashboardmonitoreo1.PNG)
 ## Recomendaciones en la entrega del proyecto
