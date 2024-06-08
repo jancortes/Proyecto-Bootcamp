@@ -62,10 +62,10 @@
 ## Asociar cada NatGateway con una PrivateSubnet
 ## Crear las rutas para salida a internet.
 ## Crear grupos de seguridad:
-#### Grupo para la instancia en la subred publica
-#### Grupo para la instancia en la subred privada
-#### Grupo para la base de datos
-#### Grupo de seguridad para el balanceador de cargas
+#### ![image](https://github.com/jancortes/Proyecto-Bootcamp/assets/170776324/f5ddaed6-06d2-4cbd-8085-a6a21bbc25ad) Grupo para la instancia en la subred publica
+#### ![image](https://github.com/jancortes/Proyecto-Bootcamp/assets/170776324/79cfb86e-2caa-40ea-99e1-752d2c9b3e44) Grupo para la instancia en la subred privada
+#### ![image](https://github.com/jancortes/Proyecto-Bootcamp/assets/170776324/53f095c7-283e-41f5-bd54-fa1deb02e1fb) Grupo para la base de datos
+#### ![image](https://github.com/jancortes/Proyecto-Bootcamp/assets/170776324/2486c854-9382-42ac-9152-12850b8095de) Grupo de seguridad para el balanceador de cargas
 ### Crear Roles IAM con los siguientes permisos:
 ####  S3FullAccess
 ####  SSMFullAccess
