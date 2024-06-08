@@ -10,8 +10,8 @@
 ### - Usuario de Consulta: Accesos de solo lectura Amazon EC2, RDS.
 # *1.2 Diagrama de Gantt![image](https://github.com/jancortes/Proyecto-Bootcamp/assets/170776324/b7f77aba-2f44-4298-badd-af767f91a62e)
 
-![Diagrama de Gantt]
-# 1.3* Requerimientos
+![Diagrama de Gantt](images/DiagramadeGantt.PNG)
+# 1.3 Requerimientos
 ## - Requerimiento 1 
 # Desarrollar la plataforma web que permita a los clientes explorar los diferentes libros.
 ## - Requerimiento 2
