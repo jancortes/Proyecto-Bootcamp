@@ -47,12 +47,12 @@
 ## Crear VPC
 #### CIDR: 172.16.0.0/16
 ## Crear 6 subredes en dos zonas de disponibilidad diferentes:
-#### PublicSubnetA: 172.16.1.0/24 - Availability Zone A
-#### PublicSubnetB: 172.16.2.0/24 - Availability Zone B
-#### PrivateSubnetA: 172.16.3.0/24-Availability Zone A
-#### PrivateSubnetB: 172.16.4.0/24 - Availability Zone B
-#### PrivateSubnetAA: 172.16.5.0/24-Availability Zone A
-#### PrivateSubnetBB: 172.16.6.0/24 - Availability Zone B
+#### ![image](https://github.com/jancortes/Proyecto-Bootcamp/assets/170776324/1f2c94c0-0e7a-4e19-81eb-96cacad2113c) PublicSubnetA: 172.16.1.0/24 - Availability Zone A
+#### ![image](https://github.com/jancortes/Proyecto-Bootcamp/assets/170776324/1f2c94c0-0e7a-4e19-81eb-96cacad2113c) PublicSubnetB: 172.16.2.0/24 - Availability Zone B
+#### ![image](https://github.com/jancortes/Proyecto-Bootcamp/assets/170776324/1f2c94c0-0e7a-4e19-81eb-96cacad2113c) PrivateSubnetA: 172.16.3.0/24-Availability Zone A
+#### ![image](https://github.com/jancortes/Proyecto-Bootcamp/assets/170776324/1f2c94c0-0e7a-4e19-81eb-96cacad2113c) PrivateSubnetB: 172.16.4.0/24 - Availability Zone B
+#### ![image](https://github.com/jancortes/Proyecto-Bootcamp/assets/170776324/1f2c94c0-0e7a-4e19-81eb-96cacad2113c) PrivateSubnetAA: 172.16.5.0/24-Availability Zone A
+#### ![image](https://github.com/jancortes/Proyecto-Bootcamp/assets/170776324/1f2c94c0-0e7a-4e19-81eb-96cacad2113c) PrivateSubnetBB: 172.16.6.0/24 - Availability Zone B
 ## Crear Route Table
 ## Asociar con las dos subredes públicas
 ## Crear ruta para salida a internet
@@ -86,7 +86,7 @@
 
 #### High Available and High Scaling 2
 
-#### pip install boto3
+#### ´´´pip install boto3´´´
 #### wget https://jav-bucket-web.s3.amazonaws.com/python-db-ssm.zip
 #### wget https://jav-bucket-web.s3.amazonaws.com/databases.zip
 #### sudo unzip python-db-ssm.zip
