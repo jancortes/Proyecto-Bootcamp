@@ -14,34 +14,34 @@
 
 # 1.3 Requerimientos
 ## - Requerimiento 1 
-# Desarrollar la plataforma web que permita a los clientes explorar los diferentes libros.
+### Desarrollar la plataforma web que permita a los clientes explorar los diferentes libros.
 ## - Requerimiento 2
-# Implementar la red en la nube de AWS con 6 subredes: dos públicas y cuatro privadas. Para garantizar Alta disponibilidad, se usaran dos zonas de disponibilidad (zona A y zona B).
+#### Implementar la red en la nube de AWS con 6 subredes: dos públicas y cuatro privadas. Para garantizar Alta disponibilidad, se usaran dos zonas de disponibilidad (zona A y zona B).
 ## - Requerimiento 3
-# La subred pública actuará como la puerta de entrada a la plataforma en línea, brindando a los usuarios acceso a internet y una experiencia de navegación
-# fluida a traves del balanceador de carga. Se usara un auto scaling para redirigir volumen de tráfico creando nuevas instancias que permitan mantener equilibrado ese tráfico.
+### La subred pública actuará como la puerta de entrada a la plataforma en línea, brindando a los usuarios acceso a internet y una experiencia de navegación
+### fluida a traves del balanceador de carga. Se usara un auto scaling para redirigir volumen de tráfico creando nuevas instancias que permitan mantener equilibrado ese tráfico.
 ## - Requerimiento 4
-# Las subredes privadas  estarán protegidas contra accesos no autorizados desde internet garantizando la seguridad de los datos sensibles de la librería.
+### Las subredes privadas  estarán protegidas contra accesos no autorizados desde internet garantizando la seguridad de los datos sensibles de la librería.
 ## - Requerimiento 5
-# La instancia EC2 debe poder conectarse a la base de datos en la subred privada. Para facilitar la conexión se implementarán parámetros de configuración de la base de datos RDS en el AWS System Manager Parameter Store,
-# garantizando acceso seguro y eficiente a los datos almacenados.
+### La instancia EC2 debe poder conectarse a la base de datos en la subred privada. Para facilitar la conexión se implementarán parámetros de configuración de la base de datos RDS en el AWS System Manager Parameter Store, garantizando acceso seguro y eficiente a ### los datos almacenados.
 ## - Requerimiento 7
-# Se debe garantizar consultas al modulo de calificaciones y contactenos dentro de la pagina del cliente.
-# - Requerimientos No funcionales
+### Se debe garantizar consultas al modulo de calificaciones y contactenos dentro de la pagina del cliente.
+## - Requerimientos No funcionales
 ## - Requerimiento 8
-# El Framework usado para la pagina web esta flask y el motor de la Base de Datos se encuentra en MariaBD.
-# El despliegue por codigo ha sido diseñado en Python
-# Se aplican pruebas de stress y de carga. Adicionalmente se asigna al usuario solicitante un acceso para ingresar y validar la funcionalidad de la pagina.
-# Se ejecutan pruebas de escalabilidad, y HA para comprobar alta disponibilidad. 
-# Legislaciones de Derechos de Autor (recomendacion al usuario solicitante para evitar incurrir en posibles amonestaciones de ley).
-## 1.4* Arquitectura
+### El Framework usado para la pagina web esta flask y el motor de la Base de Datos se encuentra en MariaBD.
+### El despliegue por codigo ha sido diseñado en Python
+### Se aplican pruebas de stress y de carga. Adicionalmente se asigna al usuario solicitante un acceso para ingresar y validar la funcionalidad de la pagina.
+### Se ejecutan pruebas de escalabilidad, y HA para comprobar alta disponibilidad. 
+### Legislaciones de Derechos de Autor (recomendacion al usuario solicitante para evitar incurrir en posibles amonestaciones de ley).
+
+## 1.4 Arquitectura
 ### Este es el diagrama de arquitectura para una infraestructura altamente disponible en una libreria.
 ![arquitectura nube](images/arquitecturanube.PNG)
 # 2. Ejecucion
 
 ### Para automatizar el despliegue de la infraestructura de la plataforma online de la librería, se decidió utilizar el servicio AWS Cloudformation. Para tal efecto se creó un repositorio en donde se almacenaron los dos templates: network.yml y application.yml y ### mediante el servicio de Codepipeline se tomó como source el repositorio en Codecommit, se hizo la configuración para automatizar el despliegue de la capa de red y de la capa de aplicación. Para ello se configuró el pipeline determinando el archivo que se va ### a lanzar que es el network.yml y después se ejecutó el mismo proceso con el script el application.yml y así se automatizó el despliegue de la infraestructura.
 
-## Se utilizó el servicio de cloudoformation que es un servicio de infraestructura como código para realizar el despliegue de la arquitectura. Utilizamos el siguiente comando para realizar el despliegue de la arquitectura:
+### Se utilizó el servicio de cloudoformation que es un servicio de infraestructura como código para realizar el despliegue de la arquitectura. Utilizamos el siguiente comando para realizar el despliegue de la arquitectura:
 ## Realizar la validacion de los template network.yml
 ### aws cloudformation validate-template --template-body file://network.yml
 ### aws cloudformation create-stack --stack-name network-stack --template-body file://network.yml
@@ -55,7 +55,7 @@
 ### PrivateSubnetAA: 172.16.5.0/24-Availability Zone A
 ### PrivateSubnetBB: 172.16.6.0/24 - Availability Zone B
 ## Crear Route Table
-### Asociar con las dos subredes públicas
+## Asociar con las dos subredes públicas
 ## Crear ruta para salida a internet
 ## Crear dos NatGateway
 ### Uno se crea en la PublicSubnetA
@@ -76,7 +76,7 @@
 ## Asociar dos subredes públicas.
 ## Crear los parametros de conexión a la base de datos en System Manager-Parameter Store
 ## Crear instancia en una subred pública con el siguiente User Data:
-#!/bin/bash
+* #!/bin/bash
 sudo dnf install -y python3.9-pip
 pip install virtualenv
 sudo dnf install -y mariadb105-server
