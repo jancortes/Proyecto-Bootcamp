@@ -172,7 +172,12 @@ aws codecommit get-repository --repository-name infraestructura-aws
 
 # Se realiza un git clone del repositorio que acabamos de crear
 git clone https://git-codecommit.us-east-1.amazonaws.com/v1/repos/infraestructura-aws
+
 ### Creamos el pipeline
+
+![creacion pipeline](images/creacionpipeline.PNG)
+
+
 ## Extraemos los archivos network.yml y application.yml y revisamos que se encuentren cargados en el repositorio de infraestructura-aws
 ## Y se ejecuta el despliegue con el comando
 python3 app.py
