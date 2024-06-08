@@ -164,9 +164,12 @@ $ aws codecommit list-repositories
 
 ![listado de repositorios](images/listrepositories.PNG)
 
-
 ## Consultamos el repositorio
 aws codecommit get-repository --repository-name infraestructura-aws
+![consulta repositorio](images/consultarrepositoris.PNG)
+
+
+
 # Se realiza un git clone del repositorio que acabamos de crear
 git clone https://git-codecommit.us-east-1.amazonaws.com/v1/repos/infraestructura-aws
 ### Creamos el pipeline
