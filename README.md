@@ -188,7 +188,7 @@ git clone https://git-codecommit.us-east-1.amazonaws.com/v1/repos/infraestructur
 ## Y se ejecuta el despliegue con el comando
 python3 app.py
 ## Ahora podemos observar los recursos desplegados de forma correcta en AWS Cloudformation.
-
+![infraestructura desplegada](images/infraestructuradesplegada.PNG)
 
 
 # Seguimiento y Control
