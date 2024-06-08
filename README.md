@@ -93,7 +93,7 @@
 #### sudo unzip databases.zip
 #### sudo mv python-db-ssm databases /home/ec2-user
 
-## Ingresar a la instancia y crear el siguiente archivo en la ruta /etc/systemd/system/myapp.service
+#### Ingresar a la instancia y crear el siguiente archivo en la ruta /etc/systemd/system/myapp.service
 
 #### sudo nano /etc/systemd/system/myapp.service
 #### [Unit]
