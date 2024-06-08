@@ -181,7 +181,7 @@ git clone https://git-codecommit.us-east-1.amazonaws.com/v1/repos/infraestructur
 
 ![configuracion pipeline](images/configuracionpipeline.PNG)
 
-## Extraemos los archivos network.yml y application.yml y revisamos que se encuentren cargados en el repositorio de infraestructura-aws
+## Extraemos los archivos network.yml ![network.yml](network.yml) y application.yml ![aplication.yml](application.yml) y revisamos que se encuentren cargados en el repositorio de infraestructura-aws
 
 ![extraccionde archivo](images/extracciondearchivo.PNG)
 
