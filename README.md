@@ -84,33 +84,33 @@
 #### pip install flask
 #### pip install mysql-connector-python
 
-High Available and High Scaling 2
+#### High Available and High Scaling 2
 
-pip install boto3
-wget https://jav-bucket-web.s3.amazonaws.com/python-db-ssm.zip
-wget https://jav-bucket-web.s3.amazonaws.com/databases.zip
-sudo unzip python-db-ssm.zip
-sudo unzip databases.zip
-sudo mv python-db-ssm databases /home/ec2-user
+#### pip install boto3
+#### wget https://jav-bucket-web.s3.amazonaws.com/python-db-ssm.zip
+#### wget https://jav-bucket-web.s3.amazonaws.com/databases.zip
+#### sudo unzip python-db-ssm.zip
+#### sudo unzip databases.zip
+#### sudo mv python-db-ssm databases /home/ec2-user
 
 ## Ingresar a la instancia y crear el siguiente archivo en la ruta /etc/systemd/system/myapp.service
 
-sudo nano /etc/systemd/system/myapp.service
-[Unit]
-Description=My Flask Application
-[Service]
-User=ec2-user
-WorkingDirectory=/home/ec2-user/python-db-ssm
-ExecStart=/usr/bin/python3 /home/ec2-user/python-db-ssm/app.py
-Restart=always
-[Install]
-WantedBy=multi-user.target
+#### sudo nano /etc/systemd/system/myapp.service
+#### [Unit]
+#### Description=My Flask Application
+#### [Service]
+#### User=ec2-user
+#### WorkingDirectory=/home/ec2-user/python-db-ssm
+#### ExecStart=/usr/bin/python3 /home/ec2-user/python-db-ssm/app.py
+#### Restart=always
+#### [Install]
+#### WantedBy=multi-user.target
 ## Recarga el demonio para que reconozca los cambios realizados:
 ### sudo systemctl daemon-reload
 ## Inicie el servicio:
-sudo systemctl start myapp
+#### sudo systemctl start myapp
 ## Habilitar el servicio para que inicie cuando arranque la máquina
-sudo systemctl enable myapp
+#### sudo systemctl enable myapp
 ## Se crea la base de datos en RDS:
 ## Se hace la migración de la base de datos
 ## Se crea una Image (AMI) desde la instancia EC2 creada en la subred pública.
@@ -129,9 +129,9 @@ sudo systemctl enable myapp
 ## Asociar Load Balancer con Auto Scaling Group.
 ## Para definir el Health Check:
 ### Desde la aplicación agregar lo siguiente:
-@app.route('/health')
-def health():
-return jsonify('Ok'),200
+#### @app.route('/health')
+#### def health():
+#### return jsonify('Ok'),200
 ## Crear base de datos:
 ## Crear SubnetGroup y asociar a la base de datos.
 ## Probar el servicio
@@ -141,8 +141,8 @@ return jsonify('Ok'),200
 ### AmazonEC2RoleForSSM
 ## Asociar Rol a las instancias
 ### Desde las instancias puede revisar estado del servicio System Manager Agent usando:
-sudo yum install -y amazon-ssm-agent
-sudo systemctl status amazon-ssm-agent
+#### sudo yum install -y amazon-ssm-agent
+#### sudo systemctl status amazon-ssm-agent
 ## Ir al servicio System Manager:
 ## Seleccionar Fleet Manager
 ## Seleccionar el ID de las instancias.
@@ -151,27 +151,26 @@ sudo systemctl status amazon-ssm-agent
 ## Seleccionar instancias y darle ejecutar.
 ## En la barra de búsqueda se puede seleccionar: AWS-RunShellScript
 ## Se puede escribir los comandos a ejecutar en las instancias.
-****
 ## Segmentamos el codigo por servicio o según se requiera:
-Application.yml
-Network.yml
+#### Application.yml
+#### Network.yml
 ## Creamos un repositorio para desplegar la infraestructura
-$ aws codecommit create-repository --repository-name infraestructura-aws --repository-description "crear infraestructura en aws"
+### $ aws codecommit create-repository --repository-name infraestructura-aws --repository-description "crear infraestructura en aws"
 ![despliegue de infraestructura](images/creacionrepositorio.PNG)
 
 ### Se listan los repositorios
-$ aws codecommit list-repositories
+### $ aws codecommit list-repositories
 
 ![listado de repositorios](images/listrepositories.PNG)
 
 ## Consultamos el repositorio
-aws codecommit get-repository --repository-name infraestructura-aws
+### aws codecommit get-repository --repository-name infraestructura-aws
 ![consulta repositorio](images/consultarrepositoris.PNG)
 
 
 
 # Se realiza un git clone del repositorio que acabamos de crear
-git clone https://git-codecommit.us-east-1.amazonaws.com/v1/repos/infraestructura-aws
+### git clone https://git-codecommit.us-east-1.amazonaws.com/v1/repos/infraestructura-aws
 
 ### Creamos el pipeline
 
@@ -186,7 +185,7 @@ git clone https://git-codecommit.us-east-1.amazonaws.com/v1/repos/infraestructur
 
 
 ## Y se ejecuta el despliegue con el comando
-python3 app.py
+### python3 app.py
 ## Ahora podemos observar los recursos desplegados de forma correcta en AWS Cloudformation.
 ![infraestructura desplegada](images/infraestructuradesplegada.PNG)
 
