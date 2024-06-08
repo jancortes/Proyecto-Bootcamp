@@ -188,7 +188,7 @@
 ### python3 app.py
 ## Ahora podemos observar los recursos desplegados de forma correcta en AWS Cloudformation.
 ![infraestructura desplegada](images/infraestructuradesplegada.PNG)
-![pagina web](images/pagina el mundo de las letras.PNG)
+![pagina web](images/paginaelmundodelasletras.PNG)
 
 
 # 3. Seguimiento y Control
