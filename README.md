@@ -178,7 +178,7 @@ git clone https://git-codecommit.us-east-1.amazonaws.com/v1/repos/infraestructur
 ![creacion pipeline](images/creacionpipeline.PNG)
 
 
-![configuracion pipeline](images/)
+![configuracion pipeline](images/configuracionpipeline.PNG)
 
 ## Extraemos los archivos network.yml y application.yml y revisamos que se encuentren cargados en el repositorio de infraestructura-aws
 ## Y se ejecuta el despliegue con el comando
