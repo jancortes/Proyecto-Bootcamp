@@ -181,6 +181,10 @@ git clone https://git-codecommit.us-east-1.amazonaws.com/v1/repos/infraestructur
 ![configuracion pipeline](images/configuracionpipeline.PNG)
 
 ## Extraemos los archivos network.yml y application.yml y revisamos que se encuentren cargados en el repositorio de infraestructura-aws
+
+![extraccionde archivo](images/extracciondearchivo.PNG)
+
+
 ## Y se ejecuta el despliegue con el comando
 python3 app.py
 ## Ahora podemos observar los recursos desplegados de forma correcta en AWS Cloudformation.
