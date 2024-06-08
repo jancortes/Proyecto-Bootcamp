@@ -59,8 +59,8 @@
 ## Crear dos NatGateway
 #### Uno se crea en la PublicSubnetA
 #### El otro se crea en la PublicSubnetB
-## Asociar cada NatGateway con una PrivateSubnet
-## Crear las rutas para salida a internet.
+### Asociar cada NatGateway con una PrivateSubnet
+### Crear las rutas para salida a internet.
 ## Crear grupos de seguridad:
 #### ![image](https://github.com/jancortes/Proyecto-Bootcamp/assets/170776324/f5ddaed6-06d2-4cbd-8085-a6a21bbc25ad) Grupo para la instancia en la subred publica
 #### ![image](https://github.com/jancortes/Proyecto-Bootcamp/assets/170776324/79cfb86e-2caa-40ea-99e1-752d2c9b3e44) Grupo para la instancia en la subred privada
