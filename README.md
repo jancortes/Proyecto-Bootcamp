@@ -8,9 +8,10 @@
 ### - Equipo de soporte de Almacenamiento: puede ver solamente los buckets creados en S3.
 ### - Auditor - Accesos: Accesos de solo lectura Amazon EC2, RDS, IAM.
 ### - Usuario de Consulta: Accesos de solo lectura Amazon EC2, RDS.
-# *1.2 Diagrama de Gantt![image](https://github.com/jancortes/Proyecto-Bootcamp/assets/170776324/b7f77aba-2f44-4298-badd-af767f91a62e)
+# *1.2 Diagrama de Gantt
 
 ![Diagrama de Gantt](images/DiagramadeGantt.PNG)
+
 # 1.3 Requerimientos
 ## - Requerimiento 1 
 # Desarrollar la plataforma web que permita a los clientes explorar los diferentes libros.
