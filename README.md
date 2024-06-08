@@ -75,7 +75,7 @@
 ## Asociar dos subredes públicas.
 ## Crear los parametros de conexión a la base de datos en System Manager-Parameter Store
 ## Crear instancia en una subred pública con el siguiente User Data:
-#### ```sh #!/bin/bash
+#### ``` #!/bin/bash
 #### sudo dnf install -y python3.9-pip
 #### pip install virtualenv
 #### sudo dnf install -y mariadb105-server
@@ -86,12 +86,12 @@
 
 #### High Available and High Scaling 2
 
-### ``` sh pip install boto3
+``` sh pip install boto3
 ### wget https://jav-bucket-web.s3.amazonaws.com/python-db-ssm.zip
 ### wget https://jav-bucket-web.s3.amazonaws.com/databases.zip
 ### sudo unzip python-db-ssm.zip
 ### sudo unzip databases.zip
-### sudo mv python-db-ssm databases /home/ec2-user ```
+### sudo mv python-db-ssm databases /home/ec2-user
 
 ## Ingresar a la instancia y crear el siguiente archivo en la ruta /etc/systemd/system/myapp.service
 
