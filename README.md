@@ -75,18 +75,18 @@
 ## Asociar dos subredes públicas.
 ## Crear los parametros de conexión a la base de datos en System Manager-Parameter Store
 ## Crear instancia en una subred pública con el siguiente User Data:
-#### ``` #!/bin/bash
+#### #!/bin/bash
 #### sudo dnf install -y python3.9-pip
 #### pip install virtualenv
 #### sudo dnf install -y mariadb105-server
 #### sudo service mariadb start
 #### sudo chkconfig mariadb on
 #### pip install flask
-#### pip install mysql-connector-python ```
+#### pip install mysql-connector-python
 
 #### High Available and High Scaling 2
 
-``` sh pip install boto3 ```
+### sh pip install boto3
 ### wget https://jav-bucket-web.s3.amazonaws.com/python-db-ssm.zip
 ### wget https://jav-bucket-web.s3.amazonaws.com/databases.zip
 ### sudo unzip python-db-ssm.zip
