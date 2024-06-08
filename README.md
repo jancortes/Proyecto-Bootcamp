@@ -86,7 +86,7 @@
 
 #### High Available and High Scaling 2
 
-´´´ pip install boto3 ´´´
+```pip install boto3```
 #### wget https://jav-bucket-web.s3.amazonaws.com/python-db-ssm.zip
 #### wget https://jav-bucket-web.s3.amazonaws.com/databases.zip
 #### sudo unzip python-db-ssm.zip
