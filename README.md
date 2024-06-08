@@ -76,7 +76,7 @@
 ## Asociar dos subredes públicas.
 ## Crear los parametros de conexión a la base de datos en System Manager-Parameter Store
 ## Crear instancia en una subred pública con el siguiente User Data:
-* #!/bin/bash
+** #!/bin/bash
 sudo dnf install -y python3.9-pip
 pip install virtualenv
 sudo dnf install -y mariadb105-server
@@ -200,6 +200,5 @@ python3 app.py
 ![CloudWatch](images/Dashboardmonitoreo.PNG)
 ![Cloudwatch](images/Dashboardmonitoreo1.PNG)
 ## Recomendaciones en la entrega del proyecto
-# Todos los requerimientos mencionados en el documento, son entregados a conformidad del solicitante. Cualquier tipo 
-# de Cambio fuera de los requerimientos establecidos seran evaluados y presupuestados en un proyecto nuevo. El
-# Soporte tendrá como alcance unicamente los recursos desplegados durante el desarrollo del proyecto y no seran incluidos nuevos requerimientos.
+### Todos los requerimientos mencionados en el documento, son entregados a conformidad del solicitante. Cualquier tipo de Cambio fuera de los requerimientos establecidos seran evaluados y presupuestados en un proyecto nuevo. 
+### El Soporte tendrá como alcance unicamente los recursos desplegados durante el desarrollo del proyecto y no seran incluidos nuevos requerimientos.
