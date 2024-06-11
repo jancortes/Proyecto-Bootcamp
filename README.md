@@ -15,6 +15,7 @@
 # 1.3 Estimacion de costos
 ![Estimacion de costos](images/Estimatecost.PNG)
 ### https://calculator.aws/#/estimate?id=e1d7d4ecb70b0f98cc894106e8c391e14ac86466
+![Detalle Costos](anexos/AWS_Calculator[1].pdf)
 
 #  1.4 Requerimientos
 ## - Requerimiento 1 
