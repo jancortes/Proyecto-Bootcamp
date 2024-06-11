@@ -12,6 +12,9 @@
 
 ![Diagrama de Gantt](images/DiagramadeGantt.PNG)
 
+# 1.3 Estimacion de costos
+![Estimacion de costos](images/Estimatecost.PNG)
+
 # 1.3 Requerimientos
 ## - Requerimiento 1 
 ### Desarrollar la plataforma web que permita a los clientes explorar los diferentes libros.
