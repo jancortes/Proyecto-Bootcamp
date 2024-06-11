@@ -8,42 +8,42 @@
 ### - Equipo de soporte de Almacenamiento: puede ver solamente los buckets creados en S3.
 ### - Auditor - Accesos: Accesos de solo lectura Amazon EC2, RDS, IAM.
 ### - Usuario de Consulta: Accesos de solo lectura Amazon EC2, RDS.
-# 1.2 Diagrama de Gantt
+#  *1.2 Diagrama de Gantt
 
 ![Diagrama de Gantt](images/DiagramadeGantt.PNG)
 
-# 1.3 Estimacion de costos
+#  *1.3 Estimacion de costos
 ![Estimacion de costos](images/Estimatecost.PNG)
 ### https://calculator.aws/#/estimate?id=e1d7d4ecb70b0f98cc894106e8c391e14ac86466
 ![Detalle Costos](anexos/AWS_Calculator[1].pdf)
 
-#  1.4 Requerimientos
-## - Requerimiento 1 
-### Desarrollar la plataforma web que permita a los clientes explorar los diferentes libros.
-## - Requerimiento 2
+#  *1.4 Requerimientos
+### - Requerimiento 1 
+#### Desarrollar la plataforma web que permita a los clientes explorar los diferentes libros.
+### - Requerimiento 2
 #### Implementar la red en la nube de AWS con 6 subredes: dos públicas y cuatro privadas. Para garantizar Alta disponibilidad, se usaran dos zonas de disponibilidad (zona A y zona B).
-## - Requerimiento 3
-### La subred pública actuará como la puerta de entrada a la plataforma en línea, brindando a los usuarios acceso a internet y una experiencia de navegación
-### fluida a traves del balanceador de carga. Se usara un auto scaling para redirigir volumen de tráfico creando nuevas instancias que permitan mantener equilibrado ese tráfico.
-## - Requerimiento 4
-### Las subredes privadas  estarán protegidas contra accesos no autorizados desde internet garantizando la seguridad de los datos sensibles de la librería.
-## - Requerimiento 5
-### La instancia EC2 debe poder conectarse a la base de datos en la subred privada. Para facilitar la conexión se implementarán parámetros de configuración de la base de datos RDS en el AWS System Manager Parameter Store, garantizando acceso seguro y eficiente a ### los datos almacenados.
-## - Requerimiento 7
-### Se debe garantizar consultas al modulo de calificaciones y contactenos dentro de la pagina del cliente.
-## - Requerimientos No funcionales
-## - Requerimiento 8
-### El Framework usado para la pagina web esta flask y el motor de la Base de Datos se encuentra en MariaBD.
-### El despliegue por codigo ha sido diseñado en Python
-### Se aplican pruebas de stress y de carga. Adicionalmente se asigna al usuario solicitante un acceso para ingresar y validar la funcionalidad de la pagina.
-### Se ejecutan pruebas de escalabilidad, y HA para comprobar alta disponibilidad. 
-### Legislaciones de Derechos de Autor (recomendacion al usuario solicitante para evitar incurrir en posibles amonestaciones de ley).
+### - Requerimiento 3
+#### La subred pública actuará como la puerta de entrada a la plataforma en línea, brindando a los usuarios acceso a internet y una experiencia de navegación
+#### fluida a traves del balanceador de carga. Se usara un auto scaling para redirigir volumen de tráfico creando nuevas instancias que permitan mantener equilibrado ese tráfico.
+### - Requerimiento 4
+#### Las subredes privadas  estarán protegidas contra accesos no autorizados desde internet garantizando la seguridad de los datos sensibles de la librería.
+### - Requerimiento 5
+#### La instancia EC2 debe poder conectarse a la base de datos en la subred privada. Para facilitar la conexión se implementarán parámetros de configuración de la base de datos RDS en el AWS System Manager Parameter Store, garantizando acceso seguro y eficiente a los datos almacenados.
+### - Requerimiento 7
+#### Se debe garantizar consultas al modulo de calificaciones y contactenos dentro de la pagina del cliente.
+### - Requerimientos No funcionales
+### - Requerimiento 8
+#### El Framework usado para la pagina web esta flask y el motor de la Base de Datos se encuentra en MariaBD.
+#### El despliegue por codigo ha sido diseñado en Python
+#### Se aplican pruebas de stress y de carga. Adicionalmente se asigna al usuario solicitante un acceso para ingresar y validar la funcionalidad de la pagina.
+#### Se ejecutan pruebas de escalabilidad, y HA para comprobar alta disponibilidad. 
+#### Legislaciones de Derechos de Autor (recomendacion al usuario solicitante para evitar incurrir en posibles amonestaciones de ley).
 
-## 1.4 Arquitectura
+## *1.5 Arquitectura
 ### Este es el diagrama de arquitectura para una infraestructura altamente disponible en una libreria.
 ![arquitectura nube](images/arquitecturanube.PNG)
 
-# 2. Ejecucion
+# *2. Ejecucion
 ### Para automatizar el despliegue de la infraestructura de la plataforma online de la librería, se decidió utilizar el servicio AWS Cloudformation. Para tal efecto se creó un repositorio en donde se almacenaron los dos templates: network.yml y application.yml y mediante el servicio de Codepipeline se tomó como source el repositorio en Codecommit, se hizo la configuración para automatizar el despliegue de la capa de red y de la capa de aplicación. Para ello se configuró el pipeline determinando el archivo que se va a lanzar que es el network.yml y después se ejecutó el mismo proceso con el script el application.yml y así se automatizó el despliegue de la infraestructura. 
 ### Se utilizó el servicio de cloudoformation que es un servicio de infraestructura como código para realizar el despliegue de la arquitectura. Utilizamos el siguiente comando para realizar el despliegue de la arquitectura:
 ### Realizar la validacion de los template network.yml
