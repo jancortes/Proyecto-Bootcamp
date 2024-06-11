@@ -15,7 +15,7 @@
 # 1.3 Estimacion de costos
 ![Estimacion de costos](images/Estimatecost.PNG)
 
-# 1.3 Requerimientos
+#  1.4 Requerimientos
 ## - Requerimiento 1 
 ### Desarrollar la plataforma web que permita a los clientes explorar los diferentes libros.
 ## - Requerimiento 2
@@ -108,65 +108,65 @@
 #### Restart=always
 #### [Install]
 #### WantedBy=multi-user.target
-## Recarga el demonio para que reconozca los cambios realizados:
+### Recarga el demonio para que reconozca los cambios realizados:
 ### sudo systemctl daemon-reload
 ## Inicie el servicio:
 #### sudo systemctl start myapp
 ## Habilitar el servicio para que inicie cuando arranque la máquina
 #### sudo systemctl enable myapp
-## Se crea la base de datos en RDS:
-## Se hace la migración de la base de datos
-## Se crea una Image (AMI) desde la instancia EC2 creada en la subred pública.
-## Se crea un Launch Template desde la AMI creada en el paso anterior.
-## No escoger VPC. Se determina en la configuración del Auto Scaling Group
-## Asignar rol.
-## Crear key pair: PEM *el key pair es propio de cada recurso*
-## Crear Auto Scaling Group a partir del Launch Template creado en el paso anterior.
-## No seleccionar Load Balancer. Se creará después.
-## Seleccionar Subredes privadas donde se van a lanzar las instancias.
-## Crear Load Balancer:
-## Escoger Application Load Balancer
-## VPC y las subredes públicas.
-## Crear Target group:
-## Definir puerto 5000
-## Asociar Load Balancer con Auto Scaling Group.
-## Para definir el Health Check:
+### Se crea la base de datos en RDS:
+### Se hace la migración de la base de datos
+### Se crea una Image (AMI) desde la instancia EC2 creada en la subred pública.
+### Se crea un Launch Template desde la AMI creada en el paso anterior.
+### No escoger VPC. Se determina en la configuración del Auto Scaling Group
+### Asignar rol.
+### Crear key pair: PEM *el key pair es propio de cada recurso*
+### Crear Auto Scaling Group a partir del Launch Template creado en el paso anterior.
+### No seleccionar Load Balancer. Se creará después.
+### Seleccionar Subredes privadas donde se van a lanzar las instancias.
+### Crear Load Balancer:
+### Escoger Application Load Balancer
+### VPC y las subredes públicas.
+### Crear Target group:
+### Definir puerto 5000
+### Asociar Load Balancer con Auto Scaling Group.
+### Para definir el Health Check:
 ### Desde la aplicación agregar lo siguiente:
 #### @app.route('/health')
 #### def health():
 #### return jsonify('Ok'),200
-## Crear base de datos:
-## Crear SubnetGroup y asociar a la base de datos.
-## Probar el servicio
-## Se debe reiniciar el servidor que correo el servidor web en segundo plano. Para ello se utiliza el servicio
+### Crear base de datos:
+### Crear SubnetGroup y asociar a la base de datos.
+### Probar el servicio
+### Se debe reiniciar el servidor que correo el servidor web en segundo plano. Para ello se utiliza el servicio
 ### System Manager:
 ## Se debe crear un rol para EC2 con el siguiente permiso:
-### AmazonEC2RoleForSSM
-## Asociar Rol a las instancias
+#### AmazonEC2RoleForSSM
+### Asociar Rol a las instancias
 ### Desde las instancias puede revisar estado del servicio System Manager Agent usando:
 #### sudo yum install -y amazon-ssm-agent
 #### sudo systemctl status amazon-ssm-agent
-## Ir al servicio System Manager:
-## Seleccionar Fleet Manager
-## Seleccionar el ID de las instancias.
-## En Node Actions, escoger Execute run Command
-## En la barra de búsquedas seleccionar: AWS-UpdateSSMAgent
-## Seleccionar instancias y darle ejecutar.
-## En la barra de búsqueda se puede seleccionar: AWS-RunShellScript
-## Se puede escribir los comandos a ejecutar en las instancias.
-## Segmentamos el codigo por servicio o según se requiera:
+### Ir al servicio System Manager:
+### Seleccionar Fleet Manager
+### Seleccionar el ID de las instancias.
+### En Node Actions, escoger Execute run Command
+### En la barra de búsquedas seleccionar: AWS-UpdateSSMAgent
+### Seleccionar instancias y darle ejecutar.
+### En la barra de búsqueda se puede seleccionar: AWS-RunShellScript
+### Se puede escribir los comandos a ejecutar en las instancias.
+### Segmentamos el codigo por servicio o según se requiera:
 #### Application.yml
 #### Network.yml
-## Creamos un repositorio para desplegar la infraestructura
+### Creamos un repositorio para desplegar la infraestructura
 ### $ aws codecommit create-repository --repository-name infraestructura-aws --repository-description "crear infraestructura en aws"
 ![despliegue de infraestructura](images/creacionrepositorio.PNG)
 
-### Se listan los repositorios
+#### Se listan los repositorios
 ### $ aws codecommit list-repositories
 
 ![listado de repositorios](images/listrepositories.PNG)
 
-## Consultamos el repositorio
+### Consultamos el repositorio
 ### aws codecommit get-repository --repository-name infraestructura-aws
 ![consulta repositorio](images/consultarrepositoris.PNG)
 
@@ -182,12 +182,12 @@
 
 ![configuracion pipeline](images/configuracionpipeline.PNG)
 
-## Extraemos los archivos ![network.yml](network.yml) y ![aplication.yml](application.yml) y revisamos que se encuentren cargados en el repositorio de infraestructura-aws
+### Extraemos los archivos ![network.yml](network.yml) y ![aplication.yml](application.yml) y revisamos que se encuentren cargados en el repositorio de infraestructura-aws
 
 ![extraccionde archivo](images/extracciondearchivo.PNG)
 
 
-## Y se ejecuta el despliegue con el comando
+### Y se ejecuta el despliegue con el comando
 ### python3 app.py
 ## Ahora podemos observar los recursos desplegados de forma correcta en AWS Cloudformation.
 ![infraestructura desplegada](images/infraestructuradesplegada.PNG)
