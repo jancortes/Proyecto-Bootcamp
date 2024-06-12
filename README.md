@@ -219,10 +219,18 @@
 #### Ayuda a los arquitectos de la nube a crear una infraestructura segura, de alto rendimiento, resistente y eficiente para una variedad de aplicaciones y cargas de trabajo. Este marco, creado en torno a seis pilares (excelencia operativa, seguridad, fiabilidad, eficiencia de rendimiento, optimización de costos y sostenibilidad), ofrece un enfoque coherente para que los clientes y los socios evalúen las arquitecturas e implementen diseños escalables.
 ![AWS Well Architect](images/AWSWellArchitected.PNG)
 ## Control de Infraestructura con Cloudwatch
+#### Amazon CloudWatch es un servicio que supervisa las aplicaciones, responde a los cambios de rendimiento, optimiza el uso de los recursos y proporciona información sobre el estado operativo. Al recopilar datos en todos los recursos de AWS, CloudWatch brinda visibilidad del rendimiento de todo el sistema y permite a los usuarios configurar alarmas, reaccionar automáticamente a los cambios y obtener una visión unificada del estado operativo.
 
 ![CloudWatch](images/Dashboardmonitoreo.PNG)
 ![Cloudwatch](images/Dashboardmonitoreo1.PNG)
-![Cloudwatch]()
+
+#### Amazon CloudWatch recopila y visualiza los registros, las métricas y los datos de evento en tiempo real en paneles automatizados para simplificar la infraestructura y el mantenimiento de aplicaciones.
+
+![Cloudwatch](images/monitoreoacorreo.PNG)
+
+#### Tambien puede recibir notificaciones de este servicio a su correo electronico para mantenerse enterado del estado de su infraestructura en tiempo real.
+
+
 ### Recomendaciones en la entrega del proyecto
 ##### Todos los requerimientos mencionados en el documento, son entregados a conformidad del solicitante. Cualquier tipo de Cambio fuera de los requerimientos establecidos seran evaluados y presupuestados en un proyecto nuevo. 
 ##### El Soporte tendrá como alcance unicamente los recursos desplegados durante el desarrollo del proyecto y no seran incluidos nuevos requerimientos.
