@@ -48,10 +48,12 @@
 
 #  *2. Ejecucion*
 #### Para automatizar el despliegue de la infraestructura de la plataforma online de la librería, se decidió utilizar el servicio AWS Cloudformation. Para tal efecto se creó un repositorio en donde se almacenaron los dos templates: network.yml y application.yml y mediante el servicio de Codepipeline se tomó como source el repositorio en Codecommit, se hizo la configuración para automatizar el despliegue de la capa de red y de la capa de aplicación. Para ello se configuró el pipeline determinando el archivo que se va a lanzar que es el network.yml y después se ejecutó el mismo proceso con el script el application.yml y así se automatizó el despliegue de la infraestructura. 
-### Se utilizó el servicio de cloudoformation que es un servicio de infraestructura como código para realizar el despliegue de la arquitectura. Utilizamos el siguiente comando para realizar el despliegue de la arquitectura:
-### Realizar la validacion de los template network.yml
+
+#### Se utilizó el servicio de cloudformation que es un servicio de infraestructura como código para realizar el despliegue de la arquitectura. Utilizamos el siguiente comando para realizar el despliegue de la arquitectura:
+#### Realizar la validacion de los template network.yml
 #### aws cloudformation validate-template --template-body file://network.yml
 #### aws cloudformation create-stack --stack-name network-stack --template-body file://network.yml
+
 ## Crear VPC
 #### CIDR: 172.16.0.0/16
 ## Crear 6 subredes en dos zonas de disponibilidad diferentes:
@@ -67,13 +69,15 @@
 ## Crear dos NatGateway
 #### Uno se crea en la PublicSubnetA
 #### El otro se crea en la PublicSubnetB
-### Asociar cada NatGateway con una PrivateSubnet
+#### Asociar cada NatGateway con una PrivateSubnet
 ### Crear las rutas para salida a internet.
+
 ## Crear grupos de seguridad:
 #### ![image](https://github.com/jancortes/Proyecto-Bootcamp/assets/170776324/f5ddaed6-06d2-4cbd-8085-a6a21bbc25ad) Grupo para la instancia en la subred publica
 #### ![image](https://github.com/jancortes/Proyecto-Bootcamp/assets/170776324/79cfb86e-2caa-40ea-99e1-752d2c9b3e44) Grupo para la instancia en la subred privada
 #### ![image](https://github.com/jancortes/Proyecto-Bootcamp/assets/170776324/53f095c7-283e-41f5-bd54-fa1deb02e1fb) Grupo para la base de datos
 #### ![image](https://github.com/jancortes/Proyecto-Bootcamp/assets/170776324/2486c854-9382-42ac-9152-12850b8095de) Grupo de seguridad para el balanceador de cargas
+
 ### Crear Roles IAM con los siguientes permisos:
 ####  S3FullAccess
 ####  SSMFullAccess
@@ -84,38 +88,44 @@
 ## Crear los parametros de conexión a la base de datos en System Manager-Parameter Store
 ## Crear instancia en una subred pública con el siguiente User Data:
 
-##### #!/bin/bash
-##### sudo dnf install -y python3.9-pip
-##### pip install virtualenv
-##### sudo dnf install -y mariadb105-server
-##### sudo service mariadb start
-##### sudo chkconfig mariadb on
-##### pip install flask
-##### pip install mysql-connector-python
-##### High Available and High Scaling 2
-##### sh pip install boto3
-##### wget https://jav-bucket-web.s3.amazonaws.com/python-db-ssm.zip
-##### wget https://jav-bucket-web.s3.amazonaws.com/databases.zip
-##### sudo unzip python-db-ssm.zip
-##### sudo unzip databases.zip
-##### sudo mv python-db-ssm databases /home/ec2-user
-#### Ingresar a la instancia y crear el siguiente archivo en la ruta /etc/systemd/system/myapp.service
-##### sudo nano /etc/systemd/system/myapp.service
-##### [Unit]
-##### Description=My Flask Application
-##### [Service]
-##### User=ec2-user
-##### WorkingDirectory=/home/ec2-user/python-db-ssm
-##### ExecStart=/usr/bin/python3 /home/ec2-user/python-db-ssm/app.py
-##### Restart=always
-##### [Install]
-##### WantedBy=multi-user.target
+###### #!/bin/bash
+###### sudo dnf install -y python3.9-pip
+###### pip install virtualenv
+###### sudo dnf install -y mariadb105-server
+###### sudo service mariadb start
+###### sudo chkconfig mariadb on
+###### pip install flask
+###### pip install mysql-connector-python
+###### High Available and High Scaling 2
+###### sh pip install boto3
+###### wget https://jav-bucket-web.s3.amazonaws.com/python-db-ssm.zip
+###### wget https://jav-bucket-web.s3.amazonaws.com/databases.zip
+###### sudo unzip python-db-ssm.zip
+###### sudo unzip databases.zip
+###### sudo mv python-db-ssm databases /home/ec2-user
+
+
+
+### Ingresar a la instancia y crear el siguiente archivo en la ruta /etc/systemd/system/myapp.service
+###### sudo nano /etc/systemd/system/myapp.service
+###### [Unit]
+###### Description=My Flask Application
+###### [Service]
+###### User=ec2-user
+###### WorkingDirectory=/home/ec2-user/python-db-ssm
+###### ExecStart=/usr/bin/python3 /home/ec2-user/python-db-ssm/app.py
+###### Restart=always
+###### [Install]
+###### WantedBy=multi-user.target
+
 #### Recarga el demonio para que reconozca los cambios realizados:
-##### sudo systemctl daemon-reload
+###### sudo systemctl daemon-reload
+
 #### Inicie el servicio:
-##### sudo systemctl start myapp
+###### sudo systemctl start myapp
 #### Habilitar el servicio para que inicie cuando arranque la máquina
-##### sudo systemctl enable myapp
+###### sudo systemctl enable myapp
+
 #### Se crea la base de datos en RDS:
 #### Se hace la migración de la base de datos
 #### Se crea una Image (AMI) desde la instancia EC2 creada en la subred pública.
@@ -129,53 +139,57 @@
 #### Crear Load Balancer:
 #### Escoger Application Load Balancer
 #### VPC y las subredes públicas.
+
 #### Crear Target group:
 #### Definir puerto 5000
 #### Asociar Load Balancer con Auto Scaling Group.
 #### Para definir el Health Check:
 #### Desde la aplicación agregar lo siguiente:
-##### @app.route('/health')
-##### def health():
-##### return jsonify('Ok'),200
+###### @app.route('/health')
+###### def health():
+###### return jsonify('Ok'),200
+
 #### Crear base de datos:
 #### Crear SubnetGroup y asociar a la base de datos.
 #### Probar el servicio
 #### Se debe reiniciar el servidor que correo el servidor web en segundo plano. Para ello se utiliza el servicio
 #### System Manager:
 #### Se debe crear un rol para EC2 con el siguiente permiso:
-##### AmazonEC2RoleForSSM
-#### Asociar Rol a las instancias
-#### Desde las instancias puede revisar estado del servicio System Manager Agent usando:
-##### sudo yum install -y amazon-ssm-agent
-##### sudo systemctl status amazon-ssm-agent
+
+###### AmazonEC2RoleForSSM
+##### Asociar Rol a las instancias
+##### Desde las instancias puede revisar estado del servicio System Manager Agent usando:
+###### sudo yum install -y amazon-ssm-agent
+###### sudo systemctl status amazon-ssm-agent
+
 #### Ir al servicio System Manager:
-#### Seleccionar Fleet Manager
-#### Seleccionar el ID de las instancias.
-#### En Node Actions, escoger Execute run Command
-#### En la barra de búsquedas seleccionar: AWS-UpdateSSMAgent
-#### Seleccionar instancias y darle ejecutar.
+##### Seleccionar Fleet Manager
+##### Seleccionar el ID de las instancias.
+##### En Node Actions, escoger Execute run Command
+##### En la barra de búsquedas seleccionar: AWS-UpdateSSMAgent
+##### Seleccionar instancias y darle ejecutar.
 #### En la barra de búsqueda se puede seleccionar: AWS-RunShellScript
 #### Se puede escribir los comandos a ejecutar en las instancias.
 #### Segmentamos el codigo por servicio o según se requiera:
 ##### Application.yml
 ##### Network.yml
-#### Creamos un repositorio para desplegar la infraestructura
-##### $ aws codecommit create-repository --repository-name infraestructura-aws --repository-description "crear infraestructura en aws"
+##### Creamos un repositorio para desplegar la infraestructura
+###### $ aws codecommit create-repository --repository-name infraestructura-aws --repository-description "crear infraestructura en aws"
 ![despliegue de infraestructura](images/creacionrepositorio.PNG)
 
 #### Se listan los repositorios
-##### $ aws codecommit list-repositories
+###### $ aws codecommit list-repositories
 
 ![listado de repositorios](images/listrepositories.PNG)
 
 #### Consultamos el repositorio
-##### aws codecommit get-repository --repository-name infraestructura-aws
+###### aws codecommit get-repository --repository-name infraestructura-aws
 ![consulta repositorio](images/consultarrepositoris.PNG)
 
 
 
 #### Se realiza un git clone del repositorio que acabamos de crear
-##### git clone https://git-codecommit.us-east-1.amazonaws.com/v1/repos/infraestructura-aws
+###### git clone https://git-codecommit.us-east-1.amazonaws.com/v1/repos/infraestructura-aws
 
 #### Creamos el pipeline
 
@@ -190,7 +204,7 @@
 
 
 #### Y se ejecuta el despliegue con el comando
-###### python3 app.py
+####### python3 app.py
 #### Ahora podemos observar los recursos desplegados de forma correcta en AWS Cloudformation.
 ![infraestructura desplegada](images/infraestructuradesplegada.PNG)
 ![pagina web](images/paginaelmundodelasletras.PNG)
