@@ -39,7 +39,7 @@
 #### Se ejecutan pruebas de escalabilidad, y HA para comprobar alta disponibilidad. 
 #### Legislaciones de Derechos de Autor (recomendacion al usuario solicitante para evitar incurrir en posibles amonestaciones de ley).
 
-##  *1.5 Arquitectura*
+#  *1.5 Arquitectura*
 ### Este es el diagrama de arquitectura para una infraestructura altamente disponible en una libreria.
 ![arquitectura nube](images/arquitecturanube.PNG)
 
