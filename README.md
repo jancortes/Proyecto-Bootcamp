@@ -47,7 +47,8 @@
 ### Este es el diagrama de arquitectura para una infraestructura altamente disponible en una libreria.
 ![arquitectura nube](images/arquitecturanube.PNG)
 
-#  *2. Ejecucion*
+#  *2. Ejecucion* ![image](https://github.com/jancortes/Proyecto-Bootcamp/assets/170776324/9a814960-2e64-4597-94c9-c828751ae6ab)
+
 #### Para automatizar el despliegue de la infraestructura de la plataforma online de la librería, se decidió utilizar el servicio AWS Cloudformation. Para tal efecto se creó un repositorio en donde se almacenaron los dos templates: network.yml y application.yml y mediante el servicio de Codepipeline se tomó como source el repositorio en Codecommit, se hizo la configuración para automatizar el despliegue de la capa de red y de la capa de aplicación. Para ello se configuró el pipeline determinando el archivo que se va a lanzar que es el network.yml y después se ejecutó el mismo proceso con el script el application.yml y así se automatizó el despliegue de la infraestructura. 
 
 #### Se utilizó el servicio de cloudformation que es un servicio de infraestructura como código para realizar el despliegue de la arquitectura. Utilizamos el siguiente comando para realizar el despliegue de la arquitectura:
