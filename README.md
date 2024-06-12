@@ -8,16 +8,16 @@
 ### - Equipo de soporte de Almacenamiento: puede ver solamente los buckets creados en S3.
 ### - Auditor - Accesos: Accesos de solo lectura Amazon EC2, RDS, IAM.
 ### - Usuario de Consulta: Accesos de solo lectura Amazon EC2, RDS.
-#  *1.2 Diagrama de Gantt
+#  *1.2 Diagrama de Gantt*
 
 ![Diagrama de Gantt](images/DiagramadeGantt.PNG)
 
-#  *1.3 Estimacion de costos
+#  *1.3 Estimacion de costos*
 ![Estimacion de costos](images/Estimatecost.PNG)
 ### https://calculator.aws/#/estimate?id=e1d7d4ecb70b0f98cc894106e8c391e14ac86466
 ![Detalle Costos](anexos/AWS_Calculator[1].pdf)
 
-#  *1.4 Requerimientos
+#  *1.4 Requerimientos*
 ### - Requerimiento 1 
 #### Desarrollar la plataforma web que permita a los clientes explorar los diferentes libros.
 ### - Requerimiento 2
@@ -39,11 +39,11 @@
 #### Se ejecutan pruebas de escalabilidad, y HA para comprobar alta disponibilidad. 
 #### Legislaciones de Derechos de Autor (recomendacion al usuario solicitante para evitar incurrir en posibles amonestaciones de ley).
 
-##  *1.5 Arquitectura
+##  *1.5 Arquitectura*
 ### Este es el diagrama de arquitectura para una infraestructura altamente disponible en una libreria.
 ![arquitectura nube](images/arquitecturanube.PNG)
 
-#  *2. Ejecucion
+#  *2. Ejecucion*
 ### Para automatizar el despliegue de la infraestructura de la plataforma online de la librería, se decidió utilizar el servicio AWS Cloudformation. Para tal efecto se creó un repositorio en donde se almacenaron los dos templates: network.yml y application.yml y mediante el servicio de Codepipeline se tomó como source el repositorio en Codecommit, se hizo la configuración para automatizar el despliegue de la capa de red y de la capa de aplicación. Para ello se configuró el pipeline determinando el archivo que se va a lanzar que es el network.yml y después se ejecutó el mismo proceso con el script el application.yml y así se automatizó el despliegue de la infraestructura. 
 ### Se utilizó el servicio de cloudoformation que es un servicio de infraestructura como código para realizar el despliegue de la arquitectura. Utilizamos el siguiente comando para realizar el despliegue de la arquitectura:
 ### Realizar la validacion de los template network.yml
@@ -193,7 +193,7 @@
 ![pagina web](images/paginaelmundodelasletras.PNG)
 
 
-# 3. Seguimiento y Control
+# *3. Seguimiento y Control*
 ## AWS Well-Architected 
 ### Ayuda a los arquitectos de la nube a crear una infraestructura segura, de alto rendimiento, resistente y eficiente para una variedad de aplicaciones y cargas de trabajo. Este marco, creado en torno a seis pilares (excelencia operativa, seguridad, fiabilidad, eficiencia de rendimiento, optimización de costos y sostenibilidad), ofrece un enfoque coherente para que los clientes y los socios evalúen las arquitecturas e implementen diseños escalables.
 ![AWS Well Architect](images/AWSWellArchitected.PNG)
