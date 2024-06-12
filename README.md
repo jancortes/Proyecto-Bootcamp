@@ -13,7 +13,7 @@
 
 ![Diagrama de Gantt](images/DiagramadeGantt.PNG)
 
-#  *1.3 Estimacion de costos* ![image](https://github.com/jancortes/Proyecto-Bootcamp/assets/170776324/5e3143ed-5981-4eb1-b888-f1e03ee60b5e)
+#  *1.3 Estimacion de costos*
 
 #### Invertir en una arquitectura altamente escalable y disponible en AWS es crucial para el proyecto de la librería "El mundo de las Letras". Servicios como EC2, RDS y Elastic Load Balancing gestionan eficientemente el tráfico y los datos, garantizando resiliencia y rendimiento óptimos. Esta inversión asegura continuidad del servicio y un retorno de inversión positivo, proporcionando una experiencia fluida y robusta para los clientes. Además, los costos, calculados anticipadamente para un año de producción, incluyen configuraciones de hardware adecuadas para un procesamiento óptimo, lo que maximiza la eficiencia y la fiabilidad del sistema.
 #### Adicionalmente, super importante tener en cuenta que si el cliente decide adquirir esta solución, puede obtener un descuento considerable al adquirir la suscripcion.
