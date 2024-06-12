@@ -212,7 +212,7 @@
 
 # *3. Seguimiento y Control*
 ## AWS Well-Architected 
-### Ayuda a los arquitectos de la nube a crear una infraestructura segura, de alto rendimiento, resistente y eficiente para una variedad de aplicaciones y cargas de trabajo. Este marco, creado en torno a seis pilares (excelencia operativa, seguridad, fiabilidad, eficiencia de rendimiento, optimización de costos y sostenibilidad), ofrece un enfoque coherente para que los clientes y los socios evalúen las arquitecturas e implementen diseños escalables.
+#### Ayuda a los arquitectos de la nube a crear una infraestructura segura, de alto rendimiento, resistente y eficiente para una variedad de aplicaciones y cargas de trabajo. Este marco, creado en torno a seis pilares (excelencia operativa, seguridad, fiabilidad, eficiencia de rendimiento, optimización de costos y sostenibilidad), ofrece un enfoque coherente para que los clientes y los socios evalúen las arquitecturas e implementen diseños escalables.
 ![AWS Well Architect](images/AWSWellArchitected.PNG)
 ## Control de Infraestructura con Cloudwatch
 
@@ -220,5 +220,5 @@
 ![Cloudwatch](images/Dashboardmonitoreo1.PNG)
 
 ### Recomendaciones en la entrega del proyecto
-#### Todos los requerimientos mencionados en el documento, son entregados a conformidad del solicitante. Cualquier tipo de Cambio fuera de los requerimientos establecidos seran evaluados y presupuestados en un proyecto nuevo. 
-#### El Soporte tendrá como alcance unicamente los recursos desplegados durante el desarrollo del proyecto y no seran incluidos nuevos requerimientos.
+##### Todos los requerimientos mencionados en el documento, son entregados a conformidad del solicitante. Cualquier tipo de Cambio fuera de los requerimientos establecidos seran evaluados y presupuestados en un proyecto nuevo. 
+##### El Soporte tendrá como alcance unicamente los recursos desplegados durante el desarrollo del proyecto y no seran incluidos nuevos requerimientos.
