@@ -213,7 +213,8 @@
 ![pagina web](images/paginaelmundodelasletras.PNG)
 
 
-# *3. Seguimiento y Control*
+# *3. Seguimiento y Control* ![image](https://github.com/jancortes/Proyecto-Bootcamp/assets/170776324/2481cc3f-78e2-48f0-8d5e-961cb9788255)
+
 ## AWS Well-Architected 
 #### Ayuda a los arquitectos de la nube a crear una infraestructura segura, de alto rendimiento, resistente y eficiente para una variedad de aplicaciones y cargas de trabajo. Este marco, creado en torno a seis pilares (excelencia operativa, seguridad, fiabilidad, eficiencia de rendimiento, optimización de costos y sostenibilidad), ofrece un enfoque coherente para que los clientes y los socios evalúen las arquitecturas e implementen diseños escalables.
 ![AWS Well Architect](images/AWSWellArchitected.PNG)
