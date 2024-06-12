@@ -1,6 +1,7 @@
 # Proyecto-Bootcamp-librería El mundo de las Letras
 ** Proyecto final despliegue infraestructura altamente disponible
-# *1. Planificación*
+# *1. Planificación* ![image](https://github.com/jancortes/Proyecto-Bootcamp/assets/170776324/bcd0f55e-f09d-4c81-957a-d0539f9e0882)
+
 # *1.1 Identificar Roles*
 ### - Administrador de nube y servidores: derechos de administración (acceso a todo AWS).
 ### - Desarrollador: acceso solamente a AWS Cloud9.
