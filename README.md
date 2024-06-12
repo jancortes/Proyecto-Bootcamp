@@ -222,7 +222,7 @@
 
 ![CloudWatch](images/Dashboardmonitoreo.PNG)
 ![Cloudwatch](images/Dashboardmonitoreo1.PNG)
-
+![Cloudwatch]()
 ### Recomendaciones en la entrega del proyecto
 ##### Todos los requerimientos mencionados en el documento, son entregados a conformidad del solicitante. Cualquier tipo de Cambio fuera de los requerimientos establecidos seran evaluados y presupuestados en un proyecto nuevo. 
 ##### El Soporte tendrá como alcance unicamente los recursos desplegados durante el desarrollo del proyecto y no seran incluidos nuevos requerimientos.
