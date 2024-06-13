@@ -18,7 +18,7 @@
 #  *1.3 Estimación de costos*
 
 #### Invertir en una arquitectura altamente escalable y disponible en AWS es crucial para el proyecto de la librería "El mundo de las Letras". Servicios como EC2, RDS y Elastic Load Balancing gestionan eficientemente el tráfico y los datos, garantizando resiliencia y rendimiento óptimos. Esta inversión asegura continuidad del servicio y un retorno de inversión positivo, proporcionando una experiencia fluida y robusta para los clientes. Además, los costos, calculados anticipadamente para un año de producción, incluyen configuraciones de hardware adecuadas para un procesamiento óptimo, lo que maximiza la eficiencia y la fiabilidad del sistema.
-#### Adicionalmente, super importante tener en cuenta que si el cliente decide adquirir esta solución, puede obtener un descuento considerable al adquirir la suscripcion.
+#### Adicionalmente, super importante tener en cuenta que si el cliente decide adquirir esta solución, puede obtener un descuento que puede sner desde el 80% y más al realizar la reserva de los recursos que se vayan a desplegar.
 
 ![Estimacion de costos](images/Estimatecost.PNG)
 ### https://calculator.aws/#/estimate?id=e1d7d4ecb70b0f98cc894106e8c391e14ac86466
