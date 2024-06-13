@@ -218,6 +218,13 @@
 ## AWS Well-Architected 
 #### Ayuda a los arquitectos de la nube a crear una infraestructura segura, de alto rendimiento, resistente y eficiente para una variedad de aplicaciones y cargas de trabajo. Este marco, creado en torno a seis pilares (excelencia operativa, seguridad, fiabilidad, eficiencia de rendimiento, optimización de costos y sostenibilidad), ofrece un enfoque coherente para que los clientes y los socios evalúen las arquitecturas e implementen diseños escalables.
 ![AWS Well Architect](images/AWSWellArchitected.PNG)
+
+
+![AWSArchitect](images/AWSWellArchitected1.PNG)
+
+
+
+
 ## Control de Infraestructura con Cloudwatch
 #### Amazon CloudWatch es un servicio que supervisa las aplicaciones, responde a los cambios de rendimiento, optimiza el uso de los recursos y proporciona información sobre el estado operativo. Al recopilar datos en todos los recursos de AWS, CloudWatch brinda visibilidad del rendimiento de todo el sistema y permite a los usuarios configurar alarmas, reaccionar automáticamente a los cambios y obtener una visión unificada del estado operativo. Para asegurar el buen desempeño de la plataforma web de la librería se decidió utilizar el servicio de AWS Cloudwatch que sirve para monitorear el estado y uso de los recursos de AWS para lo cual ofrece métricas, alarmas y notificaciones que se configuran entre otros, mediante el Cloudwatch Agent llamado Amazon EC2. La configuración del servicio se hizo primero entrando por System Manager y se uso fleet manager para ejecutar unos comandos que permitiera instalar el agente EC2 en las instancias que hacen parte de la arquitectura o sea en las que hacen parte del Cluster, del autoscaling group, una vez se tuvo el agente de Cloudwatch en las instancias EC2 se entró al Parameter Store y se creó un nuevo parámetro llamado “monitoreo EC2”, Se usaron las métricas estándar que ya Amazon tiene configuradas relacionadas con el tráfico de red, con la memoria y el uso de la CPU entre otras. Luego se configuró el agente para que recolecte las métricas que se definieron en un archivo JSON y que luego se validó a través del Cloudwatch. 
 ![CloudWatch](images/Dashboardmonitoreo.PNG)
