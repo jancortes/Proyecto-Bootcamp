@@ -3,6 +3,8 @@
 # *1. Planificación* ![image](https://github.com/jancortes/Proyecto-Bootcamp/assets/170776324/bcd0f55e-f09d-4c81-957a-d0539f9e0882)
 
 # *1.1 Identificar Roles*
+### Usamos el servicio IAM para definir roles y perfiles que nos permitirán garantizar el nivel de seguridad requerido y deseado para los usuarios, siempre garantizando el principio del minimo privilegio.
+
 ### - Administrador de nube y servidores: derechos de administración (acceso a todo AWS).
 ### - Desarrollador: acceso solamente a AWS Cloud9.
 ### - Administrador de servidor Web y Base de Datos: full acceso Amazon EC2, RDS y System Manager (parameter Store)
@@ -13,7 +15,7 @@
 
 ![Diagrama de Gantt](images/DiagramadeGantt.PNG)
 
-#  *1.3 Estimacion de costos*
+#  *1.3 Estimación de costos*
 
 #### Invertir en una arquitectura altamente escalable y disponible en AWS es crucial para el proyecto de la librería "El mundo de las Letras". Servicios como EC2, RDS y Elastic Load Balancing gestionan eficientemente el tráfico y los datos, garantizando resiliencia y rendimiento óptimos. Esta inversión asegura continuidad del servicio y un retorno de inversión positivo, proporcionando una experiencia fluida y robusta para los clientes. Además, los costos, calculados anticipadamente para un año de producción, incluyen configuraciones de hardware adecuadas para un procesamiento óptimo, lo que maximiza la eficiencia y la fiabilidad del sistema.
 #### Adicionalmente, super importante tener en cuenta que si el cliente decide adquirir esta solución, puede obtener un descuento considerable al adquirir la suscripcion.
@@ -48,7 +50,7 @@
 ### Este es el diagrama de arquitectura para una infraestructura altamente disponible en una libreria.
 ![arquitectura nube](images/arquitecturanube.PNG)
 
-#  *2. Ejecucion* ![image](https://github.com/jancortes/Proyecto-Bootcamp/assets/170776324/9a814960-2e64-4597-94c9-c828751ae6ab)
+#  *2. Ejecución* ![image](https://github.com/jancortes/Proyecto-Bootcamp/assets/170776324/9a814960-2e64-4597-94c9-c828751ae6ab)
 
 #### Para automatizar el despliegue de la infraestructura de la plataforma online de la librería, se decidió utilizar el servicio AWS Cloudformation. Para tal efecto se creó un repositorio en donde se almacenaron los dos templates: network.yml y application.yml y mediante el servicio de Codepipeline se tomó como source el repositorio en Codecommit, se hizo la configuración para automatizar el despliegue de la capa de red y de la capa de aplicación. Para ello se configuró el pipeline determinando el archivo que se va a lanzar que es el network.yml y después se ejecutó el mismo proceso con el script el application.yml y así se automatizó el despliegue de la infraestructura. 
 
