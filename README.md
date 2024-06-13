@@ -197,6 +197,8 @@
 ###### git clone https://git-codecommit.us-east-1.amazonaws.com/v1/repos/infraestructura-aws
 
 #### Creamos el pipeline
+### Un pipeline es un conjunto de procesos o sistemas utilizados para recopilar datos en una secuencia de pasos o etapas interconectadas, donde la finalización de una etapa se convierte en la entrada de la siguiente, en este caso
+se ejecuta el script network.yml y luego el aplication.yml.
 
 ![creacion pipeline](images/creacionpipeline.PNG)
 
